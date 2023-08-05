@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Text.RegularExpressions;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 
 public class DialougeParser : MonoBehaviour
 {
@@ -32,9 +33,6 @@ public class DialougeParser : MonoBehaviour
     void Start()
     {
         string file = "Assets/Data/Dialogue";
-        string sceneNum = EditorApplication.currentScene;
-        sceneNum = Regex.Replace(sceneNum, "[^0-9]", "");
-        file += sceneNum;
         file += ".txt";
 
         lines = new List<DialogueLine>();
